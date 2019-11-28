@@ -23,8 +23,9 @@
         function trackpurchase(){
             AF('pba', 'event', {eventType: 'EVENT', eventName: 'purchase', eventRevenue: '10.30', eventRevenueCurrency: 'INR'});
         }
+       
         function trackIdentity() {
-            AF('pba', 'event', {eventType: 'IDENTIFY', customUserId:'1234567890'})
+            AF('pba', 'event', {eventType: 'IDENTIFY', customUserId:'1234567890'});
         }
         </script>
     <body>
