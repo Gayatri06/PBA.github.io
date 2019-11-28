@@ -23,9 +23,13 @@
         function trackpurchase(){
             AF('pba', 'event', {eventType: 'EVENT', eventName: 'purchase', eventRevenue: '10.30', eventRevenueCurrency: 'INR'});
         }
+        function trackIdentity() {
+            AF('pba', 'event', {eventType: 'IDENTIFY', customUserId:'1234567890'})
+        }
         </script>
     <body>
         <button onclick="myFunction()">Subscription Event</button>
-        <button onclick="trackpurchase()">Test Event</button>
+        <button onclick="trackpurchase()">Purchase Event</button>
+        <button onclick="trackIdentity()">Identity Event</button>
     </body>
 </html>
