@@ -5,8 +5,8 @@
             in case data was set in either of them during the subscription process
         -->
         <h1>Web SDK Testing</h1>
-        <button onclick="myFunction()">Subscription Event</button>
-        <button onclick="myFunction()">Test Event</button>
+<!--         <button onclick="myFunction()">Subscription Event</button>
+        <button onclick="myFunction()">Test Event</button> -->
     </head>
   <script>
     !function(t,e,n,s,a,c,i,o,p){t.AppsFlyerSdkObject=a,t.AF=t.AF||function(){
@@ -19,8 +19,13 @@
           function myFunction(){
             AF('pba', 'event', {eventType: 'EVENT', eventCategory: 'conversion',eventName: 'subscription', eventLabel: 'newsletters'});
         }
+       
+        function trackpurchase(){
+            AF('pba', 'event', {eventType: 'EVENT', eventName: 'purchase', eventRevenue: '10.30', eventRevenueCurrency: 'INR'});
+        }
         </script>
     <body>
-        
+        <button onclick="myFunction()">Subscription Event</button>
+        <button onclick="trackpurchase()">Test Event</button>
     </body>
 </html>
