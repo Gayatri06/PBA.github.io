@@ -1,9 +1,26 @@
 Test
-<!-- AppsFlyer web SDK -->
-<script>
-!function(t,e,n,s,a,c,i,o,p){t.AppsFlyerSdkObject=a,t.AF=t.AF||function(){
-(t.AF.q=t.AF.q||[]).push([Date.now()].concat(Array.prototype.slice.call(arguments)))},
-t.AF.id=t.AF.id||i,t.AF.plugins={},o=e.createElement(n),p=e.getElementsByTagName(n)[0],o.async=1,
-o.src="https://websdk.appsflyer.com?"+(c.length>0?"st="+c.split(",").sort().join(",")+"&":"")+(i.length>0?"af_id="+i:""),
-p.parentNode.insertBefore(o,p)}(window,document,"script",0,"AF","pba","9b4e32e0-8ec3-46fc-87d8-11abb6a05c1e")
-</script>
+<html>
+    <head>
+        <!-- Assume that the server returns a response with details about the newly subscribed user -->
+        <!-- Alternatively, you can extract data from localstorage or cookies,
+            in case data was set in either of them during the subscription process
+        -->
+    </head>
+  <script>
+    !function(t,e,n,s,a,c,i,o,p){t.AppsFlyerSdkObject=a,t.AF=t.AF||function(){
+    (t.AF.q=t.AF.q||[]).push([Date.now()].concat(Array.prototype.slice.call(arguments)))},
+    t.AF.id=t.AF.id||i,t.AF.plugins={},o=e.createElement(n),p=e.getElementsByTagName(n)[0],o.async=1,
+    o.src="https://websdk.appsflyer.com?"+(c.length>0?"st="+c.split(",").sort().join(",")+"&":"")+(i.length>0?"af_id="+i:""),
+    p.parentNode.insertBefore(o,p)}(window,document,"script",0,"AF","pba","9b4e32e0-8ec3-46fc-87d8-11abb6a05c1e")
+    </script>
+   <script>
+          function myFunction(){
+            AF('pba', 'event', {eventType: 'EVENT', eventCategory: 'conversion',eventName: 'subscription', eventLabel: 'newsletters'});
+        }
+        </script>
+    <body>
+        <h1>Web SDK Testing</h1>
+        <p id="demo" onclick="myFunction()">Subscription Event</p>
+        <p id="demo" onclick="myFunction()">Test Event</p>
+    </body>
+</html>
